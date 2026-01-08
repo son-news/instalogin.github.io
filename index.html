@@ -2,121 +2,188 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Instagram</title>
+    <title>Believe Like Ronaldo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #fafafa;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-box {
-            width: 350px;
-            background: #fff;
-            border: 1px solid #dbdbdb;
-            padding: 40px 30px;
-            text-align: center;
-        }
-
-        .logo {
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 40px;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 6px 0;
-            border: 1px solid #dbdbdb;
-            border-radius: 3px;
-            background: #fafafa;
-            font-size: 14px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 12px;
-            background: #0095f6;
-            border: none;
+        body {
+            background: #000;
             color: #fff;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
+            line-height: 1.8;
         }
 
-        button:hover {
-            background: #0077cc;
-        }
-
-        .or {
-            margin: 20px 0;
-            color: #8e8e8e;
-            font-size: 13px;
-        }
-
-        .forgot {
-            margin-top: 15px;
-            font-size: 12px;
-        }
-
-        .forgot a {
-            text-decoration: none;
-            color: #00376b;
-        }
-
-        .signup-box {
-            margin-top: 10px;
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #dbdbdb;
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(
+                rgba(0,0,0,0.7),
+                rgba(0,0,0,0.8)
+            ),
+            url("https://wallpapercave.com/wp/wp2605300.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            font-size: 14px;
+            padding: 30px;
         }
 
-        .signup-box a {
-            text-decoration: none;
-            color: #0095f6;
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            max-width: 800px;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 80px 10%;
+            background: #0c0c0c;
+        }
+
+        .section:nth-child(even) {
+            background: #111;
+        }
+
+        .section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            border-left: 6px solid #e50914;
+            padding-left: 15px;
+        }
+
+        .quote {
+            font-size: 1.5rem;
             font-weight: bold;
+            margin-bottom: 30px;
+            color: #f5f5f5;
+        }
+
+        .text {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 900px;
+        }
+
+        /* QUOTE BOX */
+        .quote-box {
+            background: linear-gradient(135deg, #e50914, #b00610);
+            padding: 50px;
+            margin: 60px 0;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            box-shadow: 0 0 40px rgba(229,9,20,0.5);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 40px;
+            color: #777;
+        }
+
+        footer span {
+            color: #e50914;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <div>
-        <div class="login-box">
-            <div class="logo">Instagram</div>
-
-            <input type="text" placeholder="Phone number, username, or email">
-            <input type="password" placeholder="Password">
-
-            <button>Log In</button>
-
-            <div class="or">OR</div>
-
-            <div class="forgot">
-                <a href="#">Forgot password?</a>
-            </div>
+    <!-- HERO -->
+    <section class="hero">
+        <div>
+            <h1>CRISTIANO RONALDO</h1>
+            <p>
+                "Talent without hard work is nothing.  
+                Discipline, sacrifice, and belief create legends."
+            </p>
         </div>
+    </section>
 
-        <div class="signup-box">
-            Don't have an account? <a href="#">Sign up</a>
-        </div>
+    <!-- SECTION 1 -->
+    <section class="section">
+        <h2>Hard Work</h2>
+        <p class="quote">
+            "I’m living a dream I never want to wake up from."
+        </p>
+        <p class="text">
+            Cristiano Ronaldo is not just a footballer — he is the definition of
+            relentless discipline. Every early morning training session, every
+            painful sacrifice, and every moment of doubt was turned into fuel.
+            He teaches us that success is earned when no one is watching.
+        </p>
+    </section>
+
+    <!-- QUOTE BOX -->
+    <div class="quote-box">
+        "Your love makes me strong,  
+        your hate makes me unstoppable."
     </div>
-</div>
+
+    <!-- SECTION 2 -->
+    <section class="section">
+        <h2>Mentality</h2>
+        <p class="quote">
+            "I don’t have to show anything to anyone. There is nothing to prove."
+        </p>
+        <p class="text">
+            Ronaldo’s mindset separates him from the rest. He doesn’t fear failure.
+            He embraces pressure. He believes in preparation so deeply that confidence
+            becomes natural. When the moment arrives, he is already ready.
+        </p>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="section">
+        <h2>Legacy</h2>
+        <p class="quote">
+            "We don’t want to tell our dreams. We want to show them."
+        </p>
+        <p class="text">
+            From Madeira to the world stage, Ronaldo built a legacy that will never fade.
+            His story reminds us that where you start does not define where you finish.
+            Greatness is a choice made every single day.
+        </p>
+    </section>
+
+    <!-- FINAL QUOTE -->
+    <div class="quote-box">
+        "If you don’t believe you are the best,  
+        then you will never achieve all that you are capable of."
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        Designed with <span>Discipline & Belief</span> | Inspired by CR7 🐐
+    </footer>
 
 </body>
-  </html>
+</html>
