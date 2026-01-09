@@ -2,114 +2,163 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Believe Like Ronaldo</title>
+    <title>Dream Big | Never Give Up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Segoe UI', sans-serif;
         }
 
-        body {
-            background: #000;
-            color: #fff;
-            line-height: 1.8;
+        body{
+            background:#0a0a0a;
+            color:white;
+            line-height:1.6;
         }
 
         /* HERO SECTION */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(
-                rgba(0,0,0,0.7),
-                rgba(0,0,0,0.8)
-            ),
-            url("https://wallpapercave.com/wp/wp2605300.jpg") center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 30px;
+        .hero{
+            height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+            url("https://i.imgur.com/4ZQZ4Zg.jpg");
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            padding:20px;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 4px;
+        .hero h1{
+            font-size:4rem;
+            text-transform:uppercase;
+            letter-spacing:4px;
+            margin-bottom:20px;
         }
 
-        .hero p {
-            font-size: 1.5rem;
-            margin-top: 20px;
-            max-width: 800px;
+        .hero p{
+            font-size:1.5rem;
+            max-width:800px;
         }
 
-        /* SECTION */
-        .section {
-            padding: 80px 10%;
-            background: #0c0c0c;
+        /* SECTION COMMON */
+        section{
+            padding:80px 10%;
         }
 
-        .section:nth-child(even) {
-            background: #111;
+        h2{
+            font-size:2.8rem;
+            text-align:center;
+            margin-bottom:40px;
+            color:#ffcc00;
         }
 
-        .section h2 {
-            font-size: 2.8rem;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            border-left: 6px solid #e50914;
-            padding-left: 15px;
+        /* QUOTES */
+        .quotes{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
         }
 
-        .quote {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 30px;
-            color: #f5f5f5;
+        .quote-box{
+            background:#111;
+            padding:30px;
+            border-left:5px solid #ffcc00;
+            box-shadow:0 0 20px rgba(255,204,0,0.1);
         }
 
-        .text {
-            font-size: 1.1rem;
-            color: #ccc;
-            max-width: 900px;
+        .quote-box p{
+            font-size:1.2rem;
+            font-style:italic;
         }
 
-        /* QUOTE BOX */
-        .quote-box {
-            background: linear-gradient(135deg, #e50914, #b00610);
-            padding: 50px;
-            margin: 60px 0;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 1.8rem;
-            font-weight: 900;
-            box-shadow: 0 0 40px rgba(229,9,20,0.5);
+        /* ABOUT */
+        .about{
+            background:#0f0f0f;
+            text-align:center;
+        }
+
+        .about p{
+            max-width:900px;
+            margin:auto;
+            font-size:1.2rem;
+        }
+
+        /* GOALS */
+        .goals{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .goal{
+            background:#111;
+            padding:40px;
+            text-align:center;
+            border-radius:10px;
+            transition:0.3s;
+        }
+
+        .goal:hover{
+            transform:translateY(-10px);
+            box-shadow:0 10px 30px rgba(255,204,0,0.2);
+        }
+
+        .goal h3{
+            margin-bottom:15px;
+            color:#ffcc00;
+        }
+
+        /* TIMELINE */
+        .timeline{
+            max-width:900px;
+            margin:auto;
+        }
+
+        .step{
+            margin-bottom:30px;
+            padding:20px;
+            background:#111;
+            border-left:4px solid #ffcc00;
+        }
+
+        /* GALLERY */
+        .gallery{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .gallery img{
+            width:100%;
+            border-radius:10px;
+            transition:0.3s;
+        }
+
+        .gallery img:hover{
+            transform:scale(1.05);
         }
 
         /* FOOTER */
-        footer {
-            background: #000;
-            text-align: center;
-            padding: 40px;
-            color: #777;
+        footer{
+            background:black;
+            padding:30px;
+            text-align:center;
+            color:#aaa;
         }
 
-        footer span {
-            color: #e50914;
-            font-weight: bold;
+        footer span{
+            color:#ffcc00;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .hero p {
-                font-size: 1.2rem;
+        @media(max-width:768px){
+            .hero h1{
+                font-size:2.5rem;
             }
         }
     </style>
@@ -117,73 +166,98 @@
 
 <body>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div>
-            <h1>CRISTIANO RONALDO</h1>
-            <p>
-                "Talent without hard work is nothing.  
-                Discipline, sacrifice, and belief create legends."
-            </p>
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>Never Give Up</h1>
+        <p>
+            Success is not luck.  
+            It is discipline, patience, sacrifice, and belief in yourself
+            even when nobody else does.
+        </p>
+    </div>
+</div>
+
+<!-- QUOTES -->
+<section>
+    <h2>Powerful Quotes</h2>
+    <div class="quotes">
+        <div class="quote-box">
+            <p>"Dreams don’t work unless you do."</p>
         </div>
-    </section>
-
-    <!-- SECTION 1 -->
-    <section class="section">
-        <h2>Hard Work</h2>
-        <p class="quote">
-            "I’m living a dream I never want to wake up from."
-        </p>
-        <p class="text">
-            Cristiano Ronaldo is not just a footballer — he is the definition of
-            relentless discipline. Every early morning training session, every
-            painful sacrifice, and every moment of doubt was turned into fuel.
-            He teaches us that success is earned when no one is watching.
-        </p>
-    </section>
-
-    <!-- QUOTE BOX -->
-    <div class="quote-box">
-        "Your love makes me strong,  
-        your hate makes me unstoppable."
+        <div class="quote-box">
+            <p>"Your future is created by what you do today."</p>
+        </div>
+        <div class="quote-box">
+            <p>"Pain is temporary. Pride is forever."</p>
+        </div>
+        <div class="quote-box">
+            <p>"Hard work beats talent when talent doesn’t work hard."</p>
+        </div>
     </div>
+</section>
 
-    <!-- SECTION 2 -->
-    <section class="section">
-        <h2>Mentality</h2>
-        <p class="quote">
-            "I don’t have to show anything to anyone. There is nothing to prove."
-        </p>
-        <p class="text">
-            Ronaldo’s mindset separates him from the rest. He doesn’t fear failure.
-            He embraces pressure. He believes in preparation so deeply that confidence
-            becomes natural. When the moment arrives, he is already ready.
-        </p>
-    </section>
+<!-- ABOUT -->
+<section class="about">
+    <h2>About This Journey</h2>
+    <p>
+        Every successful person started with nothing but a vision.
+        The road is never easy. You will fail. You will feel tired.
+        But those who keep moving forward are the ones who rewrite history.
+        This page is a reminder that greatness is built one day at a time.
+    </p>
+</section>
 
-    <!-- SECTION 3 -->
-    <section class="section">
-        <h2>Legacy</h2>
-        <p class="quote">
-            "We don’t want to tell our dreams. We want to show them."
-        </p>
-        <p class="text">
-            From Madeira to the world stage, Ronaldo built a legacy that will never fade.
-            His story reminds us that where you start does not define where you finish.
-            Greatness is a choice made every single day.
-        </p>
-    </section>
-
-    <!-- FINAL QUOTE -->
-    <div class="quote-box">
-        "If you don’t believe you are the best,  
-        then you will never achieve all that you are capable of."
+<!-- GOALS -->
+<section>
+    <h2>Life Goals</h2>
+    <div class="goals">
+        <div class="goal">
+            <h3>Discipline</h3>
+            <p>Wake up early. Train hard. Stay focused.</p>
+        </div>
+        <div class="goal">
+            <h3>Consistency</h3>
+            <p>Small steps every day create massive results.</p>
+        </div>
+        <div class="goal">
+            <h3>Growth</h3>
+            <p>Learn, adapt, and improve continuously.</p>
+        </div>
+        <div class="goal">
+            <h3>Success</h3>
+            <p>Turn dreams into reality through effort.</p>
+        </div>
     </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        Designed with <span>Discipline & Belief</span> | Inspired by CR7 🐐
-    </footer>
+<!-- TIMELINE -->
+<section class="about">
+    <h2>Success Timeline</h2>
+    <div class="timeline">
+        <div class="step">🔥 Start with a clear goal</div>
+        <div class="step">💪 Face struggles and failures</div>
+        <div class="step">📈 Learn from mistakes</div>
+        <div class="step">🏆 Achieve excellence</div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+    <h2>Inspiration Gallery</h2>
+    <div class="gallery">
+        <img src="https://i.imgur.com/5KQ0ZyU.jpg">
+        <img src="https://i.imgur.com/l49aYS3.jpg">
+        <img src="https://i.imgur.com/jg0mQZy.jpg">
+        <img src="https://i.imgur.com/0Z8FQ8J.jpg">
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 | Designed with <span>Determination</span></p>
+    <p>Believe • Work • Achieve</p>
+</footer>
 
 </body>
-</html>
+    </html>
