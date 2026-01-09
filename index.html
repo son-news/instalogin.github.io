@@ -1,263 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dream Big | Never Give Up</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Amazon Clone</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+<style>
+/* ---------- GLOBAL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body{
-            background:#0a0a0a;
-            color:white;
-            line-height:1.6;
-        }
+body {
+    background: #e3e6e6;
+    transition: 0.3s;
+}
 
-        /* HERO SECTION */
-        .hero{
-            height:100vh;
-            background:
-            linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-            url("https://i.imgur.com/4ZQZ4Zg.jpg");
-            background-size:cover;
-            background-position:center;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            text-align:center;
-            padding:20px;
-        }
+.dark {
+    background: #121212;
+    color: white;
+}
 
-        .hero h1{
-            font-size:4rem;
-            text-transform:uppercase;
-            letter-spacing:4px;
-            margin-bottom:20px;
-        }
+/* ---------- NAVBAR ---------- */
+.navbar {
+    background: #131921;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-        .hero p{
-            font-size:1.5rem;
-            max-width:800px;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9900;
+}
 
-        /* SECTION COMMON */
-        section{
-            padding:80px 10%;
-        }
+.search {
+    flex: 1;
+    display: flex;
+}
 
-        h2{
-            font-size:2.8rem;
-            text-align:center;
-            margin-bottom:40px;
-            color:#ffcc00;
-        }
+.search input {
+    width: 100%;
+    padding: 8px;
+}
 
-        /* QUOTES */
-        .quotes{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:30px;
-        }
+.search button {
+    background: #febd69;
+    border: none;
+    padding: 8px;
+}
 
-        .quote-box{
-            background:#111;
-            padding:30px;
-            border-left:5px solid #ffcc00;
-            box-shadow:0 0 20px rgba(255,204,0,0.1);
-        }
+.nav-btn {
+    cursor: pointer;
+    font-size: 14px;
+}
 
-        .quote-box p{
-            font-size:1.2rem;
-            font-style:italic;
-        }
+/* ---------- CATEGORY ---------- */
+.categories {
+    background: #232f3e;
+    color: white;
+    padding: 10px;
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+}
 
-        /* ABOUT */
-        .about{
-            background:#0f0f0f;
-            text-align:center;
-        }
+/* ---------- PRODUCTS ---------- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
-        .about p{
-            max-width:900px;
-            margin:auto;
-            font-size:1.2rem;
-        }
+.product {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
 
-        /* GOALS */
-        .goals{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:30px;
-        }
+.dark .product {
+    background: #1f1f1f;
+}
 
-        .goal{
-            background:#111;
-            padding:40px;
-            text-align:center;
-            border-radius:10px;
-            transition:0.3s;
-        }
+.product img {
+    height: 180px;
+    width: 100%;
+    object-fit: contain;
+}
 
-        .goal:hover{
-            transform:translateY(-10px);
-            box-shadow:0 10px 30px rgba(255,204,0,0.2);
-        }
+.price {
+    color: #b12704;
+    margin: 5px 0;
+}
 
-        .goal h3{
-            margin-bottom:15px;
-            color:#ffcc00;
-        }
+button {
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+}
 
-        /* TIMELINE */
-        .timeline{
-            max-width:900px;
-            margin:auto;
-        }
+/* ---------- MODAL ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
 
-        .step{
-            margin-bottom:30px;
-            padding:20px;
-            background:#111;
-            border-left:4px solid #ffcc00;
-        }
+.modal-box {
+    background: white;
+    padding: 20px;
+    width: 300px;
+}
 
-        /* GALLERY */
-        .gallery{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
-        }
+.dark .modal-box {
+    background: #1f1f1f;
+}
 
-        .gallery img{
-            width:100%;
-            border-radius:10px;
-            transition:0.3s;
-        }
+/* ---------- FOOTER ---------- */
+footer {
+    background: #131921;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
 
-        .gallery img:hover{
-            transform:scale(1.05);
-        }
-
-        /* FOOTER */
-        footer{
-            background:black;
-            padding:30px;
-            text-align:center;
-            color:#aaa;
-        }
-
-        footer span{
-            color:#ffcc00;
-        }
-
-        @media(max-width:768px){
-            .hero h1{
-                font-size:2.5rem;
-            }
-        }
-    </style>
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-    <div>
-        <h1>Never Give Up</h1>
-        <p>
-            Success is not luck.  
-            It is discipline, patience, sacrifice, and belief in yourself
-            even when nobody else does.
-        </p>
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">amazon</div>
+
+    <div class="search">
+        <input placeholder="Search Amazon">
+        <button>🔍</button>
+    </div>
+
+    <div class="nav-btn" onclick="openLogin()">Login</div>
+    <div class="nav-btn" onclick="viewCart()">Cart 🛒 (<span id="cartCount">0</span>)</div>
+    <div class="nav-btn" onclick="toggleDark()">🌙</div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="categories">
+    <div>All</div>
+    <div>Mobiles</div>
+    <div>Electronics</div>
+    <div>Fashion</div>
+    <div>Deals</div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products">
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/61VuVU94RnL._SX679_.jpg">
+        <h3>Smartphone</h3>
+        <div class="price">₹14,999</div>
+        <button onclick="addToCart('Smartphone')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._SX679_.jpg">
+        <h3>Laptop</h3>
+        <div class="price">₹54,999</div>
+        <button onclick="addToCart('Laptop')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <img src="https://m.media-amazon.com/images/I/71XB2VjcbVL._SX679_.jpg">
+        <h3>Smart Watch</h3>
+        <div class="price">₹2,999</div>
+        <button onclick="addToCart('Smart Watch')">Add to Cart</button>
     </div>
 </div>
 
-<!-- QUOTES -->
-<section>
-    <h2>Powerful Quotes</h2>
-    <div class="quotes">
-        <div class="quote-box">
-            <p>"Dreams don’t work unless you do."</p>
-        </div>
-        <div class="quote-box">
-            <p>"Your future is created by what you do today."</p>
-        </div>
-        <div class="quote-box">
-            <p>"Pain is temporary. Pride is forever."</p>
-        </div>
-        <div class="quote-box">
-            <p>"Hard work beats talent when talent doesn’t work hard."</p>
-        </div>
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+    <div class="modal-box">
+        <h3>Login / Signup</h3><br>
+        <input id="user" placeholder="Username"><br><br>
+        <input id="pass" type="password" placeholder="Password"><br><br>
+        <button onclick="login()">Submit</button><br><br>
+        <button onclick="closeLogin()">Close</button>
     </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about">
-    <h2>About This Journey</h2>
-    <p>
-        Every successful person started with nothing but a vision.
-        The road is never easy. You will fail. You will feel tired.
-        But those who keep moving forward are the ones who rewrite history.
-        This page is a reminder that greatness is built one day at a time.
-    </p>
-</section>
-
-<!-- GOALS -->
-<section>
-    <h2>Life Goals</h2>
-    <div class="goals">
-        <div class="goal">
-            <h3>Discipline</h3>
-            <p>Wake up early. Train hard. Stay focused.</p>
-        </div>
-        <div class="goal">
-            <h3>Consistency</h3>
-            <p>Small steps every day create massive results.</p>
-        </div>
-        <div class="goal">
-            <h3>Growth</h3>
-            <p>Learn, adapt, and improve continuously.</p>
-        </div>
-        <div class="goal">
-            <h3>Success</h3>
-            <p>Turn dreams into reality through effort.</p>
-        </div>
-    </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="about">
-    <h2>Success Timeline</h2>
-    <div class="timeline">
-        <div class="step">🔥 Start with a clear goal</div>
-        <div class="step">💪 Face struggles and failures</div>
-        <div class="step">📈 Learn from mistakes</div>
-        <div class="step">🏆 Achieve excellence</div>
-    </div>
-</section>
-
-<!-- GALLERY -->
-<section>
-    <h2>Inspiration Gallery</h2>
-    <div class="gallery">
-        <img src="https://i.imgur.com/5KQ0ZyU.jpg">
-        <img src="https://i.imgur.com/l49aYS3.jpg">
-        <img src="https://i.imgur.com/jg0mQZy.jpg">
-        <img src="https://i.imgur.com/0Z8FQ8J.jpg">
-    </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
-    <p>© 2026 | Designed with <span>Determination</span></p>
-    <p>Believe • Work • Achieve</p>
+    Amazon Clone | Educational Purpose <br>
+    Designed by Mini Jaison
 </footer>
 
+<script>
+/* ---------- DARK MODE ---------- */
+function toggleDark() {
+    document.body.classList.toggle("dark");
+}
+
+/* ---------- LOGIN (BACKEND SIMULATION) ---------- */
+function openLogin() {
+    document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLogin() {
+    document.getElementById("loginModal").style.display = "none";
+}
+
+function login() {
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
+
+    if (user && pass) {
+        localStorage.setItem("user", user);
+        alert("Logged in as " + user);
+        closeLogin();
+    } else {
+        alert("Fill all fields");
+    }
+}
+
+/* ---------- CART ---------- */
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(item) {
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+    alert(item + " added to cart");
+}
+
+function updateCart() {
+    document.getElementById("cartCount").innerText = cart.length;
+}
+
+function viewCart() {
+    alert("Cart Items:\n" + cart.join(", "));
+}
+
+updateCart();
+</script>
+
 </body>
-    </html>
+</html>
